@@ -1,4 +1,4 @@
-import os, re, sys
+import re, sys
 from itertools import chain
 import jieba, numpy, cProfile
 
@@ -49,7 +49,8 @@ def compare(orig_txt, test_txt):
             if i == k:
                 count2 += 1
         f2.append(count2)
-    return (numpy.dot(f1, f2) / (numpy.linalg.norm(f2, ord=2) * numpy.linalg.norm(f1, ord=2)))
+    return (numpy.dot(f1, f2) /
+            (numpy.linalg.norm(f2, ord=2) * numpy.linalg.norm(f1, ord=2)))
 
 
 def write_ans(degree, ans_path):
@@ -72,10 +73,9 @@ if __name__ == '__main__':
     else:
         degree = compare(orig_txt, test_txt)
         write_ans(degree, sys.argv[3])
-
-
+'''
     cProfile.run('readtxt(orig_file)')
     cProfile.run('readtxt(test_file)')
     cProfile.run('compare(orig_txt, test_txt)')
     cProfile.run('write_ans(degree, sys.argv[3])')
-
+'''
