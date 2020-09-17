@@ -56,7 +56,7 @@ def compare(orig_txt, test_txt):
 def write_ans(degree, ans_path):
     #将文本的相似度格式化并输出到指定文件
 
-    ans = str('相似度为%.2f%%' % degree)
+    ans = str('相似度为%.2f' % degree)
     ans_file = open(ans_path, 'w', encoding='UTF-8')
     ans_file.write(ans)
     ans_file.close()
